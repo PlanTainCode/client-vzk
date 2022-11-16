@@ -1,0 +1,45 @@
+.footer-nav {
+    display: flex;
+    align-items: center;
+
+    @include media-max($phablet) {
+        flex-direction: column;
+        grid-row: 2 span;
+        margin-right: 50px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 68px;
+
+            @include media-max($tablet) {
+                margin-right: 50px;
+            }
+
+            @include media-max($phablet) {
+                margin-right: 0;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    &__link {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: $c-black;
+        transition: color $t-base;
+
+        @include media-max($tablet) {
+            font-size: 19px;
+        }
+
+        @include media-max($phablet) {
+            font-size: 12px;
+        }
+
+        &:hover {
+            color: $c-blue;
+        }
+    }
+}

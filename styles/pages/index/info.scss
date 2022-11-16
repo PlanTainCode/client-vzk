@@ -1,0 +1,124 @@
+.info {
+    margin-bottom: 100px;
+
+    @include media-max($phablet) {
+        margin-bottom: 56px;
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: 31px;
+        line-height: 37px;
+        margin-bottom: 84px;
+
+        @include media-max($tablet) {
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 56px;
+        }
+
+        @include media-max($phablet) {
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 40px;
+        }
+
+        @include media-max($mobile) {
+            font-size: 20px;
+            line-height: 26px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        @include media-max($tablet) {
+            
+        }
+
+        @include media-max($phablet) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include media-max(560px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        @include media-max(420px) {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover {
+            .info__item-img {
+                img {
+                    transform: translate(-50%, -50%) scale(1.2);
+                }
+            }
+
+            .info__item-name {
+                color: $c-accent;
+            }
+        }
+    }
+
+    &__item-img {
+        width: 196px;
+        height: 196px;
+        border-radius: 50%;
+        background-color: #F6EBFF;
+        position: relative;
+        margin-bottom: 37px;
+
+        @include media-max($tablet) {
+            width: 150px;
+            height: 150px;
+        }
+
+        @include media-max(959px) {
+            width: 135px;
+            height: 135px;
+            margin-bottom: 25px;
+        }
+
+        & > img {
+            min-width: 120%;
+            min-height: 120%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform $t-base;
+        }
+    }
+
+    &__item-name {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: $c-black;
+        transition: color $t-base;
+
+        @include media-max($tablet) {
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        @include media-max(959px) {
+            font-size: 17px;
+            line-height: 20px;
+        }
+    }
+}

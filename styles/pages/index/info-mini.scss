@@ -1,0 +1,107 @@
+.info-mini {
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        column-gap: 27px;
+
+        @include media-max($tablet) {
+            gap: 20px;
+        }
+
+        @include media-max(959px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @include media-max($phablet) {
+            gap: 14px;
+        }
+
+        @include media-max(560px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    &__item {
+        min-height: 220px;
+        background: $c-white;
+        box-shadow: 2px 0px 54px rgba(105, 41, 142, 0.11);
+        border-radius: 27px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        transition: box-shadow $t-base;
+
+        @include media-max($tablet) {
+            min-height: 208px;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        @include media-max($phablet) {
+            padding: 20px;
+            min-height: 184px;
+            border-radius: 16px;
+        }
+
+        @include media-max($mobile) {
+            min-height: 146px;
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 10px rgb(105 41 142 / 8%);
+
+            .info-mini__name {
+                color: $c-accent;
+            }
+        }
+    }
+
+    &__icon {
+        width: 88px;
+        height: 88px;
+        margin-bottom: 27px;
+
+        @include media-max($tablet) {
+            width: 105px;
+            height: 105px;
+            margin-bottom: 16px;
+        }
+
+        @include media-max($phablet) {
+            width: 80px;
+            height: 80px;
+        }
+
+        @include media-max($mobile) {
+            width: 54px;
+            height: 54px;
+        }
+    }
+
+    &__name {
+        text-align: center;
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 23px;
+        text-align: center;
+        color: $c-black;
+        transition: color $t-base;
+
+        @include media-max($tablet) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        @include media-max($phablet) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        @include media-max($mobile) {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+}

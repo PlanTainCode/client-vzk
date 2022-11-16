@@ -1,0 +1,130 @@
+body,
+input,
+textarea,
+button {
+  font-family: 'Hezaedrus', sans-serif;
+  font-size: 16px;
+  color: $c-black;
+}
+
+body {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $c-gray-light;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $t-base;
+  }
+
+  &.body--overlay {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scrolled {
+      .logo {
+        opacity: 1;
+      }
+
+      .mobile-menu-btn {
+        box-shadow: none;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.main {
+  overflow: hidden;
+  padding-bottom: 110px;
+  position: relative;
+
+  @include media-max($tablet) {
+    padding-bottom: 86px;
+  }
+
+  .decore-line-1,
+  .decore-line-2 {
+    position: absolute;
+  }
+
+  .decore-line-1 {
+    bottom: 20px;
+    left: -526px;
+
+    @include media-max($tablet) {
+      width: 712px;
+      bottom: 930px;
+      left: -544px;
+    }
+
+    @include media-max($phablet) {
+      display: none;
+    }
+  }
+
+  .decore-line-2 {
+    bottom: 1200px;
+    right: -465px;
+
+    @include media-max($tablet) {
+      width: 675px;
+      right: -436px;
+      bottom: 1650px;
+    }
+
+    @include media-max(959px) {
+      bottom: 1780px;
+    }
+
+    @include media-max($phablet) {
+      display: none;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1252px;
+  padding: 0 20px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  @include media-max($tablet) {
+    padding: 0 68px;
+  }
+
+  @include media-max($phablet) {
+    padding: 0 20px;
+  }
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include media-max($tablet) {
+    padding: 0 40px;
+  }
+
+  @include media-max($phablet) {
+    padding: 0 20px;
+  }
+}
+
+.section {}

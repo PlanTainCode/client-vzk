@@ -1,0 +1,11 @@
+.ta {
+    padding-top: 155px;
+
+    @include media-max($tablet) {
+        padding-top: 146px;
+    }
+
+    @include media-max($phablet) {
+        padding-top: 66px;
+    }
+}

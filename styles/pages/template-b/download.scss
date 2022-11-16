@@ -1,0 +1,51 @@
+.download {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #F3F7F9;
+    border-radius: 11px;
+    transition: background-color $t-base;
+    margin: 26px 0;
+
+    @include media-max($phablet) {
+        padding: 10px 14px;
+    }
+
+    &:hover {
+        background-color: #d6edf8;
+    }
+
+    img {
+        &:first-child {
+            margin-right: 14px;
+            flex: 0 0 32px;
+
+            @include media-max($phablet) {
+                width: 18px;
+                flex: 0 0 18px;
+                margin-right: 8px;
+            }
+        }
+
+        &:last-child {
+            margin-left: auto;
+            flex: 0 0 24px;
+
+            @include media-max($phablet) {
+                width: 14px;
+                flex: 0 0 14px;
+            }
+        }
+    }
+
+    span {
+        margin-right: 20px;
+        color: $c-black;
+
+        @include media-max($phablet) {
+            font-size: 14px;
+            line-height: 120%;
+        }
+    }
+}

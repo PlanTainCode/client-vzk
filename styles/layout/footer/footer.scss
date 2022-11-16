@@ -1,0 +1,82 @@
+.footer {
+    padding-bottom: 80px;
+
+    @include media-max($tablet) {
+        padding-bottom: 30px;
+    }
+
+    @include media-max($phablet) {
+        padding-bottom: 25px;
+    }
+
+    .logo {
+        width: 127px;
+        height: 40px;
+
+        @include media-max($tablet) {
+            width: 148px;
+            height: 47px;
+        }
+
+        @include media-max($phablet) {
+            width: 86px;
+            height: 27px;
+        }
+    }
+
+    .social {
+        @include media-max($tablet) {
+            grid-column-start: 2;
+            justify-self: end;
+        }
+
+        @include media-max($phablet) {
+            grid-column-start: 1;
+            grid-row-start: 2;
+            justify-self: start;
+        }
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 200px 1fr auto;
+        padding-top: 36px;
+        border-top: 1px solid rgba($c-gray, 0.5);
+        row-gap: 30px;
+        column-gap: 56px;
+
+        @include media-max($tablet) {
+            grid-template-columns: 1fr auto;
+            row-gap: 15px;
+            padding-top: 44px;
+        }
+
+        @include media-max($phablet) {
+            row-gap: 25px;
+            padding-top: 30px;
+        }
+    }
+
+    &__policy {
+        font-size: 12px;
+        color: $c-gray;
+        font-weight: 300;
+        transition: color $t-base;
+
+        @include media-max($tablet) {
+            font-size: 14px;
+            grid-row-start: 2;
+            align-self: end;
+        }
+
+        @include media-max($phablet) {
+            grid-row-start: 3;
+            grid-column: 2 span;
+            font-size: 9px;
+        }
+
+        &:hover {
+            color: $c-black;
+        }
+    }
+}

@@ -1,0 +1,205 @@
+.base-card {
+    margin-bottom: 100px;
+    background-color: $c-white;
+    margin-top: 40px;
+    position: relative;
+
+    @include media-max($phablet) {
+        margin-bottom: 40px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px;
+
+        @include media-max($tablet) {
+            grid-template-columns: 100%;
+        }
+
+        @include media-max($phablet) {
+            gap: 30px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        border-radius: 30px;
+        min-height: 352px;
+        padding: 62px 44px;
+        overflow: hidden;
+        transition: background-color $t-base;
+
+        &:hover {
+            & > img {
+                transform: scale(0.9);
+            }
+        }
+
+        @include media-max(1220px) {
+            padding: 50px 40px;
+        }
+
+        @include media-max($tablet) {
+            min-height: 236px;
+        }
+
+        @include media-max($phablet) {
+            padding: 36px;
+            border-radius: 16px;
+            min-height: 200px;
+        }
+
+        @include media-max($mobile) {
+            padding: 20px;
+        }
+
+        &:nth-child(1) {
+            background-color: #F6EBFF;
+
+            &:hover {
+                background-color: darken(#F6EBFF, 5%);
+            }
+
+            & > img {
+                width: 274px;
+                right: 0;
+                bottom: 40px;
+
+                @include media-max(1220px) {
+                    width: 240px;
+                    right: -20px;
+                    bottom: 20px;
+                }
+
+                @include media-max($tablet) {
+                    width: 190px;
+                    right: 0;
+                    bottom: 36px;
+                }
+
+                @include media-max($phablet) {
+                    width: 170px;
+                    bottom: 30px;
+                    right: 0;
+                }
+
+                @include media-max($mobile) {
+                    width: 140px;
+                    bottom: 14px;
+                    right: -10px;
+                }
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: #F9F9FA;
+
+            &:hover {
+                background-color: darken(#F9F9FA, 5%);
+            }
+
+            & > img {
+                width: 166px;
+                top: -30px;
+                right: 40px;
+
+                @include media-max(1220px) {
+                    width: 130px;
+                    top: 0px;
+                    right: 30px;
+                }
+
+                @include media-max($tablet) {
+                    width: 110px;
+                    top: -28px;
+                    right: 60px;
+                }
+
+                @include media-max($phablet) {
+                    width: 95px;
+                    top: -25px;
+                    right: 40px;
+                }
+
+                @include media-max($mobile) {
+                    width: 85px;
+                    right: 20px;
+                    top: -10px;
+                }
+            }
+        }
+
+        & > img {
+            transition: transform $t-base;
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: $c-black;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+
+        @include media-max(1220px) {
+            margin-bottom: 18px;
+        }
+
+        @include media-max($tablet) {
+            
+        }
+
+        @include media-max($phablet) {
+            font-size: 20px;
+            line-height: 26px;
+            margin-bottom: 14px;
+        }
+
+        @include media-max($mobile) {
+            font-size: 15px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__desc {
+        max-width: 300px;
+        font-weight: 300;
+        font-size: 19px;
+        line-height: 35px;
+        color: $c-black;
+        position: relative;
+        z-index: 1;
+
+        @include media-max(1220px) {
+            max-width: 280px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        @include media-max($tablet) {
+            max-width: 420px;
+            margin-right: 150px;
+        }
+
+        @include media-max($phablet) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        @include media-max($mobile) {
+            font-size: 14px;
+            line-height: 20px;
+            margin-right: 86px;
+        }
+    }
+
+    &__item-img {
+        position: absolute;
+    }
+}

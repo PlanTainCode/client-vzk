@@ -1,0 +1,104 @@
+.page-404 {
+    background-color: #F6EBFF;
+
+    &__wrapper {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        padding: 0 20px;
+    }
+
+    &__img {
+        margin-bottom: 40px;
+
+        @include media-max($phablet) {
+            width: 258px;
+            height: 94px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__title {
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 32px;
+
+        @include media-max($phablet) {
+            font-size: 26px;
+            margin-bottom: 18px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+
+    &__desc {
+        max-width: 340px;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 126.5%;
+        text-align: center;
+        letter-spacing: -0.015em;
+        margin-bottom: 32px;
+
+        @include media-max($phablet) {
+            font-size: 15px;
+            line-height: 150%;
+            max-width: 225px;
+            margin-bottom: 18px;
+        }
+    }
+
+    .btn {
+        padding: 23px 75px;
+        font-size: 20px;
+        border-radius: 40px;
+
+        @include media-max($phablet) {
+            font-size: 11px;
+            padding: 13px 43px;
+            min-width: 218px;
+        }
+    }
+
+    &__decore-1 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translate(-150px, 140px) rotate(-30deg);
+        z-index: -1;
+
+        @include media-max($tablet) {
+            transform: translate(-235px, 300px) rotate(-30deg);
+        }
+
+        @include media-max($phablet) {
+            width: 267px;
+            height: 447px;
+            transform: translate(-80px, 205px) rotate(-55deg);
+        }
+    }
+
+    &__decore-2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(160px, -300px) rotate(-30deg);
+        z-index: -1;
+
+        @include media-max($tablet) {
+            transform: translate(280px, -216px) rotate(-45deg);
+        }
+
+        @include media-max($phablet) {
+            width: 270px;
+            height: 452px;
+            transform: translate(127px, -151px) rotate(-55deg);
+        }
+    }
+}

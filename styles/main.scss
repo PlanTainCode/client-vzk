@@ -1,0 +1,55 @@
+// Вспомогательные стили
+@import './helpers/variables.scss';
+@import './helpers/mixins.scss';
+
+// Вендорные стили
+@import './vendors/jquery-ui.min.scss';
+@import './vendors/simplebar.scss';
+@import './vendors/aos.scss';
+
+// Базовые стили
+@import './base/reset.scss';
+@import './base/fonts.scss';
+@import './base/base.scss';
+
+// Стили блоков
+@import './components/button.scss';
+@import './components/logo.scss';
+@import './components/social.scss';
+@import './components/article.scss';
+@import './components/faq.scss';
+
+// Стили основных элементов
+@import './layout/header/header.scss';
+@import './layout/header/header-nav.scss';
+@import './layout/header/mobile-menu-btn.scss';
+
+@import './layout/footer/footer.scss';
+@import './layout/footer/footer-nav.scss';
+
+// Стили страниц
+@import './pages/index/main-first-screen.scss';
+@import './pages/index/whatisit.scss';
+@import './pages/index/base-card.scss';
+@import './pages/index/info.scss';
+@import './pages/index/info-mini.scss';
+@import './pages/index/news.scss';
+
+@import './pages/news/page-news.scss';
+@import './pages/news/news-cat.scss';
+@import './pages/news/news-article.scss';
+
+@import './pages/template-a/ta.scss';
+@import './pages/template-a/ta-first-section.scss';
+@import './pages/template-a/ta-grid.scss';
+
+@import './pages/template-b/tb.scss';
+@import './pages/template-b/user.scss';
+@import './pages/template-b/download.scss';
+@import './pages/template-b/btn-up.scss';
+
+@import './pages/404/page-404.scss';
+
+@import './pages/contacts/contacts.scss';
+
+@import './pages/search/search.scss';

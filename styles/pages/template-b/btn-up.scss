@@ -1,0 +1,23 @@
+.btn-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F6F5;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid $c-white;
+
+    @include media-max(1439px) {
+        display: none;
+    }
+
+    &:hover {
+        background-color: #eeeeee;
+        cursor: pointer;
+    }
+}

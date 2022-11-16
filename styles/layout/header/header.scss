@@ -1,0 +1,59 @@
+.header {
+  width: 100%;
+  padding-top: 44px;
+  padding-bottom: 20px;
+  position: fixed;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transition: padding $t-base, background-color $t-base;
+
+  @include media-max($phablet) {
+    padding-top: 20px;
+  }
+
+  .logo {
+    @include media-max($tablet) {
+      width: 174px;
+      height: 55px;
+    }
+
+    @include media-max($phablet) {
+      width: 86px;
+      height: 27px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &.scrolled {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba($c-white, 0.8);
+
+    @include media-max($tablet) {
+      background-color: transparent;
+    }
+
+    .logo {
+      @include media-max($tablet) {
+        opacity: 0;
+        transition: all $t-base;
+      }
+    }
+
+    .mobile-menu-btn {
+      background-color: $c-white;
+      border-radius: 10px;
+      box-shadow: 2px 0px 25px rgb(105 41 142 / 8%);
+
+      @include media-max($phablet) {
+        border-radius: 4px;
+      }
+    }
+  }
+}

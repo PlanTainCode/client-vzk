@@ -1,0 +1,152 @@
+.user {
+    display: flex;
+    align-items: center;
+    background-color: #F3F7F9;
+    padding: 25px;
+    border-radius: 300px 0 0 300px;
+    position: relative;
+    margin-bottom: 70px;
+    margin-top: 70px;
+
+    @include media-max(860px) {
+        max-width: 438px;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        border-radius: 300px 300px 28px 28px;
+        padding: 20px;
+        padding-bottom: 40px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        transform: translateX(calc(-100% - 55px));
+        background-color: #F3F7F9;
+        border-radius: 300px;
+
+        @include media-max(860px) {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        right: 0;
+        top: 0;
+        transform: translateX(100%);
+        background-color: #F3F7F9;
+
+        @include media-max(860px) {
+            display: none;
+        }
+    }
+
+    &__prew {
+        flex: 0 0 300px;
+        width: 300px;
+        height: 300px;
+        margin-right: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        @include media-max($tablet) {
+            flex: 0 0 398px;
+            width: 398px;
+            height: 398px;
+        }
+
+        @include media-max(860px) {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        @include media-max($phablet) {
+            width: 100%;
+            height: auto;
+            flex: initial;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__content {
+    }
+
+    &__name {
+        font-size: 32px;
+        line-height: 44px;
+        font-weight: 500;
+        color: $c-blue;
+
+        @include media-max($tablet) {
+            font-size: 28px;
+        }
+
+        @include media-max($phablet) {
+            font-size: 17px;
+            line-height: 100%;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__post {
+        max-width: 280px;
+        font-size: 18px;
+        line-height: 130%;
+        color: $c-gray;
+        font-weight: 300;
+        margin-bottom: 25px;
+
+        @include media-max($tablet) {
+            font-size: 15px;
+        }
+
+        @include media-max($phablet) {
+            font-size: 10px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__text {
+        font-size: 22px;
+        line-height: 34px;
+        font-weight: 300;
+        position: relative;
+
+        @include media-max($phablet) {
+            font-size: 15px;
+            line-height: 150%;
+        }
+
+        &::after {
+            position: absolute;
+            right: -30px;
+            top: -40px;
+            content: '';
+            width: 126px;
+            height: 100px;
+            background-image: url('./../../../img/icons/quot.svg');
+            background-size: cover;
+
+            @include media-max($tablet) {
+                width: 66px;
+                height: 52px;
+                right: 0px;
+                top: -10px;
+            }
+        }
+    }
+}

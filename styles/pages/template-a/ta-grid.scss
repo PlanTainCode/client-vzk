@@ -1,0 +1,33 @@
+.ta-grid {
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        column-gap: 38px;
+        row-gap: 40px;
+
+        @include media-max($tablet) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include media-max($phablet) {
+            column-gap: 20px;
+        }
+
+        @include media-max($mobile) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            row-gap: 30px;
+        }
+    }
+
+    &--gray {
+        background-color: #F9F9FA;
+        margin-top: 190px;
+        margin-bottom: 100px;
+        position: relative;
+
+        @include media-max($phablet) {
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+    }
+}

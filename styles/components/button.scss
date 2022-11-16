@@ -1,0 +1,49 @@
+.btn-reset {
+    background-color: transparent;
+    border: none;
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    min-width: 278px;
+    height: auto;
+    background-color: $c-accent;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 16px 30px;
+    color: $c-white;
+    border-radius: 25px;
+    box-shadow: 0px 7.88732px 31.5493px rgba(180, 50, 255, 0.5);
+    transition: box-shadow $t-base, background-color $t-base;
+
+    &:hover {
+        box-shadow: 0px 7.88732px 38px rgba(180, 50, 255, 0.84);
+    }
+
+    &:active {
+        background-color: #9915E6;
+        box-shadow: none;
+    }
+}
+
+.btn-two {
+    display: inline-block;
+    background: #4896D2;
+    border-radius: 11px;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 20px;
+    text-align: center;
+    color: $c-white;
+    transition: background-color $t-base;
+    padding: 13px 32px;
+
+    &:hover {
+        background-color: #2D7AB6;
+    }
+
+    &:active {
+        background-color: #21699F;
+    }
+}

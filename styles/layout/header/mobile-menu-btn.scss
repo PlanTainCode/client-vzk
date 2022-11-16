@@ -1,0 +1,68 @@
+.mobile-menu-btn {
+    width: 40px;
+    height: 40px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+    transition: all $t-base;
+
+    @include media-max($tablet) {
+        display: flex;
+    }
+
+    @include media-max($phablet) {
+        width: 30px;
+        height: 30px;
+    }
+
+    span {
+        width: 30px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #D3D7DB;
+        transition: all $t-base;
+
+        @include media-max($phablet) {
+            width: 22px;
+            height: 3px;
+            border-radius: 1px;
+        }
+
+        &:nth-child(2) {
+            margin-top: 6px;
+            margin-bottom: 6px;
+
+            @include media-max($phablet) {
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    &--active {
+        span {
+            &:first-child {
+                transform: translateY(10px) rotate(45deg);
+
+                @include media-max($phablet) {
+                    transform: translateY(7px) rotate(45deg);
+                }
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:last-child {
+                transform: translateY(-10px) rotate(-45deg);
+
+                @include media-max($phablet) {
+                    transform: translateY(-7px) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
