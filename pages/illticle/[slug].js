@@ -16,10 +16,11 @@ import IMGF2 from '../../img/fons/dec-bottom.svg'
 
 const Illticle = ({ illticle, submenuones, submenutwos }) => {
 
+  // console.log(illticle)
 
   return (
     <Layout submenuones={submenuones} submenutwos={submenutwos}>
-      <Seo article={illticle} />
+      {/* <Seo article={illticle} /> */}
       <main className="main tb">
         <div className="container-narrow tb__content">
           <h1 className="tb__title">{illticle.attributes.Title}</h1>
@@ -51,7 +52,7 @@ export async function getStaticProps({ params }) {
     filters: {
       slug: params.slug,
     },
-    populate: "*"
+    populate: "deep,5"
   });
 
   const [submenuonesRes, submenutwosRes  ] = await Promise.all([

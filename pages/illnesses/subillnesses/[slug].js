@@ -19,10 +19,10 @@ const Subillnesses = ({ submenuones, submenutwos, category, categories }) => {
                             <p className="ta-first-section__desc">{category.attributes.Description}</p>
                         </div>
                         <Image 
-                            src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + category.attributes.prevPic.data.attributes.url} 
-                            alt={category.attributes.prevPic.data.attributes.alternativeText}  
-                            width={category.attributes.prevPic.data.attributes.width}
-                            height={category.attributes.prevPic.data.attributes.height}
+                            src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + category.attributes.prevPic.data?.attributes.url} 
+                            alt={category.attributes.prevPic.data?.attributes.alternativeText}  
+                            width={category.attributes.prevPic.data?.attributes.width}
+                            height={category.attributes.prevPic.data?.attributes.height}
                             className="ta-first-section__img" 
                         />
                     </div>
