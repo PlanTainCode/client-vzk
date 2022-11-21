@@ -153,14 +153,14 @@ export default function Home({ submenuones, submenutwos, article, articles, glob
           <div className="container news__inner">
               {article.length === 0 ? 
                 <div className="news__item2">
-                  <a href="#" className="news__item2-prew">
+                  <Link href={`/article/${articles[0].attributes.slug}`} className="news__item2-prew">
                       <Image 
                         width={articles[0].attributes.Pic.data.attributes.width}
                         height={articles[0].attributes.Pic.data.attributes.height}
                         src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + articles[0].attributes.Pic.data.attributes.url} 
                         alt={articles[0].attributes.Pic.data.attributes.alternativeText || ""}
                       />
-                  </a>
+                  </Link>
                   <div className="news__item2-content">
                     <div className="news__item2-header">
                       <Moment  format='DD MMM YYYY' className="news__item2-date">
@@ -174,14 +174,14 @@ export default function Home({ submenuones, submenutwos, article, articles, glob
                 </div>
                 :
                 <div className="news__item2">
-                  <a href="#" className="news__item2-prew">
+                  <Link href={`/article/${article[0].attributes.slug}`} className="news__item2-prew">
                       <Image 
                         width={article[0].attributes.Pic.data.attributes.width}
                         height={article[0].attributes.Pic.data.attributes.height}
                         src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + article[0].attributes.Pic.data.attributes.url} 
                         alt={article[0].attributes.Pic.data.attributes.alternativeText || ""}
                       />
-                  </a>
+                  </Link>
                   <div className="news__item2-content">
                     <div className="news__item2-header">
                       <Moment  format='DD MMM YYYY' className="news__item2-date">
