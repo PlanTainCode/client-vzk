@@ -1,32 +1,21 @@
 import React from "react";
-import Moment from "react-moment";
-import ReactMarkdown from "react-markdown";
-import Image from 'next/image'
-import Link from 'next/link'
 // for data
-import axios from 'axios'
 import { fetchAPI } from "../../lib/api";
 // Components
-import Seo from "../../components/news/seo";
 import Layout from "../../components/layout";
-import Acordion from "../../components/news/acordion";
-// Fons
-import IMGF1 from '../../img/fons/dec-bottom.svg'
-import IMGF2 from '../../img/fons/dec-bottom.svg'
+import { Content } from "../../components/content";
 
 const Illticle = ({ illticle, submenuones, submenutwos }) => {
 
-  // console.log(illticle)
 
   return (
     <Layout submenuones={submenuones} submenutwos={submenutwos}>
-      {/* <Seo article={illticle} /> */}
       <main className="main tb">
         <div className="container-narrow tb__content">
           <h1 className="tb__title">{illticle.attributes.Title}</h1>
-          <article>
-            <p>{illticle.attributes.Description}</p>
-          </article>
+          {illticle.attributes.Content.map((illt) => (
+            <Content content={illt} />
+          ))}
         </div>
       </main>
     </Layout>

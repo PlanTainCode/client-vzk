@@ -5,8 +5,6 @@ import { fetchAPI } from "../lib/api";
 
 import Layout from "../components/layout";
 
-import Fone from '../img/template-img.png'
-
 const Illness = ({ submenuones, submenutwos, illness }) => {
 
     console.log(submenuones)
@@ -61,7 +59,6 @@ const Illness = ({ submenuones, submenutwos, illness }) => {
 }
 
 export async function getStaticProps() {
-    // Run API calls in parallel
     const [submenuonesRes, submenutwosRes, illnessRes ] = await Promise.all([
       fetchAPI("/submenuones", { populate: "*" }),
       fetchAPI("/submenutwos", { populate: "*" }),

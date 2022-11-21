@@ -51,7 +51,7 @@ export default function Header({ submenuones, submenutwos }) {
                     {/*  */}
                     {submenuones.map((submenuone) =>
                       <div className="header-nav__submenu-item" key={submenuone.id}>
-                        <Link href={`illnesses/${submenuone.attributes.slug}`} className="header-nav__submenu-link">
+                        <Link href={`/illnesses/${submenuone.attributes.slug}`} className="header-nav__submenu-link">
                           <div className="header-nav__submenu-link-prew">
                             <Image 
                                   width={submenuone.attributes.Pic.data.attributes.width}

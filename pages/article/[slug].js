@@ -1,7 +1,5 @@
 // standart imports
 import React from "react";
-import Moment from "react-moment";
-import ReactMarkdown from "react-markdown";
 import Image from 'next/image'
 import Link from 'next/link'
 // for data
@@ -10,7 +8,7 @@ import { fetchAPI } from "../../lib/api";
 // Components
 import Seo from "../../components/news/seo";
 import Layout from "../../components/layout";
-import Acordion from "../../components/news/acordion";
+import { Content } from "../../components/content";
 // Fons
 import IMGF1 from '../../img/fons/dec-bottom.svg'
 import IMGF2 from '../../img/fons/dec-bottom.svg'
@@ -36,7 +34,6 @@ const Article = ({ articlemain, categories, submenuones, submenutwos }) => {
     
   }, [fetching])
 
-  console.log(articles)
 
   React.useEffect(() => {
     document.addEventListener("scroll", scrollHandler);
@@ -58,16 +55,9 @@ const Article = ({ articlemain, categories, submenuones, submenutwos }) => {
       <main className="main tb">
         <div className="container-narrow tb__content">
           <h1 className="tb__title">{articlemain.attributes.Title}</h1>
-          <article>
-            {/* {articlemain.attributes.Text.map((text) => 
-            <ReactMarkdown children={text.Text} />
-          )} */}
-          </article>
-          <article>
-          {/* {articlemain.attributes.Acordion.map((acord) => 
-              <Acordion acord={acord} />
-          )} */}
-          </article>
+          {articlemain.attributes?.Content.map((illt) => (
+            <Content content={illt} />
+          ))}
         </div>
         <section className="ta-grid ta-grid--gray">
             <div className="container">
@@ -124,7 +114,7 @@ export async function getStaticProps({ params }) {
     filters: {
       slug: params.slug,
     },
-    populate: ["Pic", "Acordion.Markdown", "Acordion.Quote", "Text"]
+    populate: "deep,5"
   });
   const categoriesRes = await fetchAPI("/categories");
 

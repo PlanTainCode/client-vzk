@@ -6,8 +6,6 @@ import Image from "next/image";
 import { fetchAPI } from "../../../lib/api";
 
 const Subillnesses = ({ submenuones, submenutwos, category, categories }) => {
-  
-  console.log(category)
 
   return (
     <Layout submenuones={submenuones} submenutwos={submenutwos} >

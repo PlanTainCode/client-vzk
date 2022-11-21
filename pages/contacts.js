@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import { fetchAPI } from "../lib/api";
 
 const Contacts = ({submenuones, submenutwos, conitems}) => {
-    console.log(conitems)
 
     const [submitform, setSubmitform] = React.useState([])
 
@@ -88,7 +87,6 @@ const Contacts = ({submenuones, submenutwos, conitems}) => {
 }
 
 export async function getStaticProps() {
-    // Run API calls in parallel
     const [submenuonesRes, submenutwosRes, conitemsRes] = await Promise.all([
       fetchAPI("/submenuones", { populate: "*" }),
       fetchAPI("/submenutwos", { populate: "*" }),

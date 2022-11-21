@@ -46,7 +46,6 @@ const News = ({ submenuones, submenutwos, categories, articlemains }) => {
 };
 
 export async function getStaticProps() {
-  // Run API calls in parallel
   const [submenuonesRes, submenutwosRes, categoriesRes, articlemainsRes ] = await Promise.all([
     fetchAPI("/submenuones", { populate: "*" }),
     fetchAPI("/submenutwos", { populate: "*" }),

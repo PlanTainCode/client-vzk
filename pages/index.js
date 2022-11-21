@@ -19,22 +19,27 @@ import IMGL1 from '../img/fons/line-1.png'
 import IMGL2 from '../img/fons/line-2.png'
 
 
-import axios from 'axios'
 import { fetchAPI } from "../lib/api";
 
 
 import Layout from '../components/layout'
 import Moment from 'react-moment'
-export default function Home({ submenuones, submenutwos, article, articles }) {
-  // console.log(submenuones[0].attributes.Pic.data.attributes)
-  // console.log(articles.map((item) => item.attributes.Pic.data?.attributes))
+export default function Home({ submenuones, submenutwos, article, articles, global }) {
+  React.useEffect(() => {
+    document.querySelector("body").classList.remove("page-404")
+})
   return (
     <Layout submenuones={submenuones} submenutwos={submenutwos}>
       <Head>
-        <title>VZK</title>
+        <title>{global.attributes.siteName}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="./../public/favicon.png" />
+        <meta property="og:title" content={global.attributes.siteName} />
+        <meta property="og:site_name" content={global.attributes.defaultSeo.metaTitle} />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content={global.attributes.defaultSeo.metaDescription} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + global.attributes.defaultSeo.shareImage.data.attributes.url} />
       </Head>
 
       <main className='main'>
@@ -192,7 +197,7 @@ export default function Home({ submenuones, submenutwos, article, articles }) {
 
             <div className="news__wrap">
               
-              { articles.map((item) => 
+              {article.length === 0 ? articles.map((item) => 
                 <Link href={`/article/${item.attributes.slug}`} className="news__item">
                   <div className="news__item-prew">
                     <Image 
@@ -212,7 +217,28 @@ export default function Home({ submenuones, submenutwos, article, articles }) {
                     <div className="news__item-text">{item.attributes.Description}</div>
                   </div>
                 </Link>
-              ).splice(1, 2)}
+              ).splice(1, 2) : articles.map((item) => 
+                  <Link href={`/article/${item.attributes.slug}`} className="news__item">
+                    <div className="news__item-prew">
+                      <Image 
+                        width={item.attributes.Pic.data.attributes.width}
+                        height={item.attributes.Pic.data.attributes.height}
+                        src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + item.attributes.Pic.data.attributes.url} 
+                        alt={item.attributes.Pic.data.attributes.alternativeText || ""}
+                      />
+                    </div>
+                    <div className="news__item-content">
+                      <div className="news__item-header">
+                        <Moment  format='DD MMM YYYY' className="news__item-date">
+                          {item.attributes.publishedAt}
+                        </Moment>
+                        <div className="news__item-name">{item.attributes.Title}</div>
+                      </div>
+                      <div className="news__item-text">{item.attributes.Description}</div>
+                    </div>
+                  </Link>
+                ).splice(0, 2)
+              }
               
             </div>
 
@@ -254,7 +280,9 @@ export async function getStaticProps() {
     populate: "*"
   });
 
-  
+  const globalRes = await fetchAPI("/global",
+    {populate: "deep,5"}
+  )
 
 
   return {
@@ -263,7 +291,7 @@ export async function getStaticProps() {
       submenutwos: submenutwosRes.data,
       articles: articlesRes.data,
       article: articlemainRes.data,
-      
+      global: globalRes.data,
     },
     revalidate: 1,
   };

@@ -1,13 +1,11 @@
 import React from "react";
 import Layout from "../components/layout";
 import { fetchAPI } from "../lib/api";
-import Link from "next/link";
 import Image from "next/image";
 
 
 
 const Search = ({ submenuones, submenutwos, searches }) => {
-  console.log(searches[0].attributes.icon)
   return (
     <Layout submenuones={submenuones} submenutwos={submenutwos} >
       <main className="main main--pt ta">
@@ -18,7 +16,6 @@ const Search = ({ submenuones, submenutwos, searches }) => {
                         <h1 className="search__title">Поиск сообществ</h1>
                     </div>
                     <ul className="search__body">
-                        {/*  */}
                         {searches.map((search) => 
                             <li className="search__item mix" key={search.id}>
                                 <article className="search__block block-search">
@@ -56,7 +53,6 @@ const Search = ({ submenuones, submenutwos, searches }) => {
 };
 
 export async function getStaticProps() {
-  // Run API calls in parallel
   const [submenuonesRes, submenutwosRes, searchesRes ] = await Promise.all([
     fetchAPI("/submenuones", { populate: "*" }),
     fetchAPI("/submenutwos", { populate: "*" }),

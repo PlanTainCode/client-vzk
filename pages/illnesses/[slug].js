@@ -6,8 +6,6 @@ import Image from "next/image";
 import { fetchAPI } from "../../lib/api";
 
 const Illnesses = ({ submenuones, submenutwos, category, categories }) => {
-  
-  console.log(category)
 
   return (
     <Layout submenuones={submenuones} submenutwos={submenutwos} >
@@ -101,11 +99,6 @@ export async function getStaticProps({ params }) {
         populate: "*"
       }
     }
-      // {
-      // illticles: {
-      //   populate: "*",
-      //   },
-      // },
   });
 
   const allCategories = await fetchAPI("/submenuones", { populate: {illticles: {
