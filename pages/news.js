@@ -50,7 +50,7 @@ export async function getStaticProps() {
     fetchAPI("/submenuones", { populate: "*" }),
     fetchAPI("/submenutwos", { populate: "*" }),
     fetchAPI("/categories", { populate: "*" }),
-    fetchAPI("/articlemains", { populate: "*" }),
+    fetchAPI("/articlemains", { populate: "*" , sort: "publishedAt:desc",}),
   ]);
 
   return {

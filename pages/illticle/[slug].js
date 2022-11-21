@@ -12,8 +12,8 @@ const Illticle = ({ illticle, submenuones, submenutwos }) => {
     <Layout submenuones={submenuones} submenutwos={submenutwos}>
       <main className="main tb">
         <div className="container-narrow tb__content">
-          <h1 className="tb__title">{illticle.attributes.Title}</h1>
-          {illticle.attributes.Content.map((illt) => (
+          <h1 className="tb__title">{illticle?.attributes.Title}</h1>
+          {illticle?.attributes.Content.map((illt) => (
             <Content content={illt} />
           ))}
         </div>
@@ -32,10 +32,11 @@ export async function getStaticPaths() {
       },
     })),
     fallback: false,
+    // fallback: true,
   };
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps = async ({ params }) => {
 
   const illticlesRes = await fetchAPI("/illticles", {
     filters: {

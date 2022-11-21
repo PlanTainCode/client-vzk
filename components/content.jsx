@@ -6,39 +6,6 @@ import ReactMarkdown from "react-markdown";
 export const Content = ({content}) => {
     console.log(content)
 
-    const Cont = (content) => {
-        if (content.__component === "acordion.quote") {
-            return (
-                <div class="user">
-                    <div class="user__prew">
-                        <Image 
-                            width={content.Pic.data.attributes.width}
-                            height={content.Pic.data.attributes.height}
-                            src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + content.Pic.data.attributes.url} 
-                            alt={content.Pic.data.attributes.alternativeText || ""} 
-                        />
-                    </div>
-                    <div class="user__content">
-                        <div class="user__name">{content.Title}</div>
-                        <div class="user__post">{content.Who}</div>
-                        <div class="user__text">{content.Description}</div>
-                    </div>
-                </div>
-            )
-        };
-
-        if (content.__component === "acordion.acordion") {
-            return (
-                <Acordion acord={content} />
-            )
-        };
-
-        if (content.__component === "acordion.markdown") {
-            
-            
-        }
-    }
-
     return (
         <div className="content">
             {content.__component === "acordion.quote" ? (
