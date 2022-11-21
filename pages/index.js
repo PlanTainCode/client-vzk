@@ -37,7 +37,7 @@ export default function Home({ submenuones, submenutwos, article, articles, glob
         <link rel="icon" href="./../public/favicon.png" />
         <meta property="og:title" content={global.attributes.siteName} />
         <meta property="og:site_name" content={global.attributes.defaultSeo.metaTitle} />
-        <meta property="og:url" content="" />
+        <meta property="og:url" content="https://vzk.ru" />
         <meta property="og:description" content={global.attributes.defaultSeo.metaDescription} />
         <meta property="og:image" content={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + global.attributes.defaultSeo.shareImage.data.attributes.url} />
       </Head>
