@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 
-const Search = ({ submenuones, submenutwos, searches }) => {
+const IbdCommunity = ({ submenuones, submenutwos, searches }) => {
   return (
     <Layout submenuones={submenuones} submenutwos={submenutwos} >
       <main className="main main--pt ta">
@@ -69,4 +69,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Search;
+export default IbdCommunity;

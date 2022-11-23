@@ -24,7 +24,23 @@ const Acordion = ({acord}) => {
                   style={{marginTop: "20px"}}
                 />
               ) : ""}
-              
+              {acord.Quote.length !== 0 ? (
+                <div class="user-new">
+                  <div class="user-new__prew">
+                      <Image 
+                          width={acord.Quote[0].Pic.data.attributes.width}
+                          height={acord.Quote[0].Pic.data.attributes.height}
+                          src={`${process.env.NEXT_PUBLIC_STRAPI_API_URL}` + acord.Quote[0].Pic.data.attributes.url} 
+                          alt={acord.Quote[0].Pic.data.attributes.alternativeText || ""} 
+                      />
+                  </div>
+                  <div class="user-new__content">
+                      <div class="user-new__name">{acord.Quote[0].Title}</div>
+                      <div class="user-new__post">{acord.Quote[0].Who}</div>
+                      <div class="user-new__text">{acord.Quote[0].Description}</div>
+                  </div>
+              </div>
+              ) : ""}
             </div>
             )}
       </div>

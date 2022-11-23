@@ -91,11 +91,15 @@
     align-items: center;
     position: relative;
 
+    @media (max-width: 1240px) {
+      padding: 0px 30px 0px 0px;
+    }
+
     @include media-max($tablet) {
       flex: 1 1 auto;
       flex-direction: column;
       width: 100%;
-      padding: 45px 50px;
+      padding: 45px 50px 45px 50px;
       overflow-y: auto;
     }
 

@@ -60,10 +60,10 @@ const Article = ({ articlemain, categories, submenuones, submenutwos }) => {
           ))}
         </div>
         <section className="ta-grid ta-grid--gray">
-            <div className="container">
+            <div className="container-narrow">
               <div className="tb__subtitle">Читайте также</div>
             </div>
-            <div className="container ta-grid__inner">
+            <div className="container-narrow ta-grid__inner ">
               {articles.map((article) => 
                 <Link href={`/article/${article.attributes.slug}`} className="article" key={article.id}>
                   <div className="article__prew">

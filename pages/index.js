@@ -64,9 +64,9 @@ export default function Home({ submenuones, submenutwos, article, articles, glob
             <div className="whatisit__link">
               <p className="whatisit__link-title">Выделяют 3 основные формы ВЗК:</p>
               <div className="whatisit__link-wrap">
-                <a href="#" className="whatisit__link-item">Болезнь Крона</a>
-                <a href="#" className="whatisit__link-item">Язвенный колит</a>
-                <a href="#" className="whatisit__link-item">Микроскопический колит</a>
+                <Link href="/illticle/crohns-disease" className="whatisit__link-item">Болезнь Крона</Link>
+                <Link href="/illticle/ulcerative-colitis" className="whatisit__link-item">Язвенный колит</Link>
+                <Link href="/illticle/microscopic-colitis" className="whatisit__link-item">Микроскопический колит</Link>
               </div>
             </div>
           </div>
@@ -91,24 +91,24 @@ export default function Home({ submenuones, submenutwos, article, articles, glob
           <div className="container">
             <h2 className="info__title">Узнайте больше о заболевании</h2>
             <div className="info__grid">
-              <a href="#" className="info__item">
+              <Link href="/illticle/ulcerative-colitis" className="info__item">
                 <div className="info__item-img">
                   <Image src={IMGS4P1} alt="info-1" />
                 </div>
                 <div className="info__item-name">Язвенный <br /> колит</div>
-              </a>
-              <a href="#" className="info__item">
+              </Link>
+              <Link href="/illticle/crohns-disease" className="info__item">
                 <div className="info__item-img">
                   <Image src={IMGS4P2} alt="info-2" />
                 </div>
                 <div className="info__item-name">Болезнь <br /> Крона</div>
-              </a>
-              <a href="#" className="info__item">
+              </Link>
+              <Link href="/illticle/microscopic-colitis" className="info__item">
                 <div className="info__item-img">
                   <Image src={IMGS4P3} alt="info-3" />
                 </div>
                 <div className="info__item-name">Микроскопический <br /> колит</div>
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -117,7 +117,7 @@ export default function Home({ submenuones, submenutwos, article, articles, glob
           <div className="container info-mini__grid">
             {submenuones.length > 5 ?
               submenuones.map((submenuone) => 
-                <Link href={`/illnesses/${submenuone.attributes.Link}`} className="info-mini__item">
+                <Link href={`/illnesses/${submenuone.attributes.slug}`} className="info-mini__item">
                   <Image 
                     width={submenuone.attributes.Pic.data.attributes.width}
                     height={submenuone.attributes.Pic.data.attributes.height}
@@ -148,7 +148,7 @@ export default function Home({ submenuones, submenutwos, article, articles, glob
         <section className="news">
           <div className="container">
             
-            <h2 className="news__title">Некоторые новости из сферы ВЗК</h2>
+            <h2 className="news__title">Новости</h2>
           </div>
           <div className="container news__inner">
               {article.length === 0 ? 
