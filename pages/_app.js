@@ -18,6 +18,8 @@ const MyApp = ({ Component, pageProps }) => {
           rel="shortcut icon"
           href={getStrapiMedia(global.attributes.favicon)}
         />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta charSet="utf-8" />
       </Head>
       <GlobalContext.Provider value={global.attributes}>
           <Component {...pageProps} />

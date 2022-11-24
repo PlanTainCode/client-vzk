@@ -32,9 +32,6 @@ export default function Home({ submenuones, submenutwos, article, articles, glob
     <Layout submenuones={submenuones} submenutwos={submenutwos}>
       <Head>
         <title>{global.attributes.siteName}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="./../public/favicon.png" />
         <meta property="og:title" content={global.attributes.siteName} />
         <meta property="og:site_name" content={global.attributes.defaultSeo.metaTitle} />
         <meta property="og:url" content="https://vzk.ru" />
